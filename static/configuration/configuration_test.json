@@ -1,0 +1,8 @@
+{
+   "resource": "dynamodb",
+   "environment" : "stage",
+   "region": "us-east-1",
+   "endpoint": "arn:aws:dynamodb:us-east-1:702080564323:table/Test",
+   "tableName": "Test",
+   "tableKey": "SerialNumber"
+}

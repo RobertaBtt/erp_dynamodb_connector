@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_dynamodb_test_wizard" model="ir.ui.view">
+        <field name="name">Dynamodb Test Wizard</field>
+        <field name="model">dynamodb.test.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <footer>
+                    <button name="test_connection" string="Test Connection" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dynamodb_test_result_tree" model="ir.ui.view">
+        <field name="name">dynamodb.test.result.tree</field>
+        <field name="model">dynamodb.test.result</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_uid" string="Created by"/>
+                <field name="create_date"/>
+                <field name="result"/>
+            </tree>
+        </field>
+   </record>
+
+
+   <record id="view_dynamodb_test_result_form" model="ir.ui.view">
+        <field name="name">dynamodb.test.result.form</field>
+        <field name="model">dynamodb.test.result</field>
+        <field name="arch" type="xml">
+            <form string="Test Result">
+                <sheet>
+                    <group>
+                        <group>
+                           <field name="create_uid" string="Created by"/>
+                            <field name="result"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+   </record>
+
+
+    <record id="action_dynamodb_test_wizard" model="ir.actions.act_window">
+        <field name="name">DynamoDb Test Wizard</field>
+        <field name="res_model">dynamodb.test.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_dynamodb_test_wizard"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+
+     <menuitem id="menu_dynamodb_test_wizard" name="DynamoDb Test Wizard" parent="menu_dynamodb_connector_root"/>
+
+            <menuitem id="menu_dynamodb_test_wizard_action"
+                    action="action_dynamodb_test_wizard"
+                    sequence="1"
+                    parent="menu_dynamodb_test_wizard"/>
+
+</odoo>
+

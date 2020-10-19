@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="view_dynamodb_config_table_form" model="ir.ui.view">
+        <field name="name">dynamodb.config.table.form</field>
+        <field name="model">dynamodb.config.table</field>
+        <field name="arch" type="xml">
+            <form string="Dynamodb Config Table">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="create_uid" string="Created by"/>
+                            <field name="resource_name"/>
+                            <field name="endpoint"/>
+                            <field name="region_name"/>
+                        </group>
+                        <group>
+                            <field name="table_name"/>
+                            <field name="table_key"/>
+                            <field name="is_test"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+   </record>
+
+   <record id="view_dynamodb_config_table_tree" model="ir.ui.view">
+        <field name="name">dynamodb.config.table.tree</field>
+        <field name="model">dynamodb.config.table</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_uid" string="Created by"/>
+                <field name="is_test"/>
+                <field name="endpoint"/>
+                <field name="resource_name"/>
+                <field name="region_name"/>
+                <field name="table_name"/>
+                <field name="table_key"/>
+            </tree>
+        </field>
+   </record>
+
+   <!--******************ACTIONS****************-->
+   <record id="action_dynamodb_config_table_action" model="ir.actions.act_window">
+        <field name="name">Config Table</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dynamodb.config.table</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="view_id" ref="view_dynamodb_config_table_tree"/>
+   </record>
+
+    <!-- ##########################################-->
+
+   <menuitem id="menu_dynamodb_connector_root"
+        name="DynamoDb Connector"
+        web_icon="erp_dynamodb_connector,static/description/icon.png"
+        groups=""/>
+
+   <menuitem id="menu_dynamodb_connector" name="Dynamodb Connector" parent="menu_dynamodb_connector_root"/>
+
+            <menuitem id="menu_dynamodb_config_table_menu"
+                    action="action_dynamodb_config_table_action"
+                    sequence="10"
+                    parent="menu_dynamodb_connector"/>
+
+</odoo>
