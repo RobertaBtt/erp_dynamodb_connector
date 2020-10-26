@@ -9,14 +9,17 @@ This project aim to provide a module installable in Odoo 12 in order to connect 
  - Test the connection throught this Test table
  - You can configure the parameters in the Json file
  - To have a requirements.txt file that can be edit by adding the records in the requirements.txt in this project
+ 
+ ### General overview of the Architecture
+ ![diagram](docs/Architecture_ERP_DynamoDB.jpg)
 
- How to
 
+-----------------------
 ## Prerequisites:
  - To have an EC2 Amazon Server where to Run Odoo
  - To have, inside this EC2, the "credentials" file inside the hidden folder .aws 
  - To have created, in Amazon Web Services, the DynamoDB table "Test"
- 
+
  ## Install
 First, install your virtual Environment for Python
 
@@ -31,3 +34,4 @@ inside the /static/configuration/configuration_test.json file.
 
 This is just a way to test the connection, you can run this file directly
 inside Pycharm.
+
