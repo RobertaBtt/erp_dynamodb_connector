@@ -3,12 +3,12 @@
 Reads DynamoDB from Odoo
 ======================================
 
-This project aim to provide a module installable in Odoo 12 in order to connect to your DynamoDb AWS
+This project aim to provide a module installable in Odoo 12 in order to connect to DynamoDb AWS
 
  - Reads config from a Table that you configure in Odoo
- - Test the connection throught this Test table
+ - Test the connection through this Test table
  - You can configure the parameters in the Json file
- - To have a requirements.txt file that can be edit by adding the records in the requirements.txt in this project
+ - To have a requirements.txt file that can be edited by adding the records in the requirements.txt in this project
  
  ### General overview of the Architecture
  ![diagram](docs/Architecture_ERP_DynamoDB.jpg)
